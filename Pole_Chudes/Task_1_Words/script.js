@@ -33,6 +33,9 @@ $(document).ready(function(){
           });
     });
 
+    //при выборе темы пользователем, печатаем ее и выбираем рандомное слово 
+
+
     $.each(inputs, function(){
         $(this).on('change',(function(){
             choosen_theme = $(this).val();
@@ -40,18 +43,20 @@ $(document).ready(function(){
             theme_span.html(choosen_theme);
             random_word = words[Math.floor(Math.random() * words.length)];
             answer = [];
-            $.each(random_word.split(''), function(index){
+            $.each(random_word.split(''), function(index){ // запись слова в массив и отображение
                 let letter = $('<span></span>');
                 if (random_word[index] == '-') letter.html('-');
                 else letter.html('_');
                 answer[index] = letter;
             });
             word_span.html(answer);
-            $.each(keys, function(){
+            $.each(keys, function(){ // сбрасываем всю использованую клавиатуру
                 $(this).removeClass('disabled').removeAttr('disabled');
             });
         }));
     });
+
+    // при нажатии на клавиши, проверка на соответствие буквы в слове
 
     $.each(keys, function(){
         $(this).on('click', function(){
