@@ -9,37 +9,52 @@
 }
 
 #wrap{
-    width: 100%;
+    max-width:1200px;
+    margin: 0 auto;
     min-height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
 .banner{
-    width: 75%;
     min-height: 300px;
-    position: absolute;
-    top: 50px;
-    left:50%;
-    transform: translateX(-50%);
-    border:solid;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    margin-top: 50px;
+}
+.row .col-md-8, .row .col-md-4{
+    padding: 30px;
 }
 
-.themas_to_choose{
-    width: 28%;
-    text-align: center;
+.show_result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.show_result span{
+    font-size: 24px;
+    font-weight: 600;
+}
+.show_result #word{
+    margin-top: 50px;
+    font-size: 32px;
+}
+
+.show_result #word span{
+    padding: 5px 12px;
+    margin-left: 5px;
+    background:#E4EFFF;
+    border-radius: 6px;
+    border:2px solid #3C80ED;
+    user-select: none;
 }
 
 .themas_to_choose p{
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
 }
 .themas_to_choose .radio{
     display: inline-block;
-    margin: 5px;
+    margin: 10px;
 }
 
 .radio input[type=radio] {
@@ -49,8 +64,8 @@
 .radio label {
 	display: inline-block;
 	cursor: pointer;
-	padding: 0px 12px;
-	line-height: 34px;
+	padding: 10px 20px;
+	font-size: 18px;
 	border: 3px solid #3C80ED;
 	border-radius: 6px;
 	user-select: none;
@@ -61,43 +76,38 @@
     color:#fff;
 }
 
-.content{
-    width: 70%;
+.row.drop{
+    height: 100px; 
+} 
+
+.row .drop_field{
     padding: 20px;
-    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #3C80ED;
+    user-select: none;
 }
 
-.content *{
-    margin: 10px 0;
-}
-
-.content span{
+.row .drop_field h2.message{
     font-size: 24px;
-    font-weight: 600;
-}
-.content #word{
-    font-size: 32px;
-    letter-spacing: 5px;
+    color: #97B8ED;
 }
 
 .keyboard_block{
-    width: 100%;
-    min-height: 200px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
+    height: 200px;
 }
 
-.keyboard_block .keyboard{
-    width: 50%;
-    height: 75%;
+.keyboard_block .row{
+    padding: 30px;
     display: flex;
-    flex-wrap:wrap;
     justify-content: center;
+    align-items: center;
+}
+
+.keyboard_block .row .keyboard{
+    padding: 20px;
 }
 
 .key{
@@ -113,7 +123,6 @@
     font-weight: 500;
     text-align: center;
     transition: 0.2s ease-in-out;
-    z-index:0;
     padding: 2px;
     user-select: none;
     cursor: pointer;
@@ -125,7 +134,6 @@
     border-color:#fff;
     color:#fff;
     box-shadow: 0 0 20px 3px rgba(0,0,0,0.5);
-    z-index: 1;
 }
 
 .key.disabled{
