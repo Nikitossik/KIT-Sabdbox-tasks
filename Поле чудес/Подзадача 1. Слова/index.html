@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+	<div id="wrap">
+        <div class="banner">
+            <div class="content">
+                <h2>Theme: <span id="theme">Choose the theme of words</span></h2>
+                <span id="word"></span>
+            </div>
+            <div class="themas_to_choose">
+                <p>Themas to play:</p>
+
+                <div class="radio">
+                    <input type="radio" id="auto" value="Auto" name="theme">
+                    <label for="auto">Auto</label>
+                </div>
+                
+                <div class="radio">
+                    <input type="radio" id="city" value="City" name="theme">
+                    <label for="city">City</label>
+                </div>
+
+                <div class="radio">
+                    <input type="radio" id="character" value="Character" name="theme">
+                    <label for="character">Character</label>
+                </div>
+
+                <div class="radio">
+                    <input type="radio" id="family" value="Family" name="theme">
+                    <label for="family">Family</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="keyboard_block">
+            <div class="keyboard"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
