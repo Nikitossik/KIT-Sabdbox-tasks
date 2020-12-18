@@ -25,10 +25,10 @@ $(document).ready(function(){
     bot2.find('img').attr('src', img2);
 
     var showman_phrases = [
-        'Сектор "Приз" на барабане',
-        'Сектор "Плюс" на барабане',
-        'Сектор "Ключ" на барабане',
-        'Переход хода', 'Очки удвоены!',
+        'Сектор "Приз" на барабане!',
+        'Сектор "Плюс" на барабане!',
+        'Сектор "Ключ" на барабане!',
+        'Переход хода!', 'Очки удвоены!',
         'Есть такая буква!',
         'Такой буквы нет!'
     ];
@@ -36,8 +36,6 @@ $(document).ready(function(){
     $('#say-btn').click(function(){
         var phrase_box = $('.show-man-box .phrase-box'),
             phrase = showman_phrases[Math.floor(Math.random() * showman_phrases.length)];
-
-        console.log(phrase);
 
         phrase_box.find('#phrase').html(phrase);
         phrase_box.fadeIn();
