@@ -51,32 +51,18 @@ $(document).ready(function(){
                 else letter.html('_');
                 answer[index] = letter;
             });
-            word_span.html(answer);
-            var dragged_elems = target_area.find('.key');
-            if (dragged_elems){
+            word_span.html(answer); // вставка угадываемого слова
+            var dragged_elems = target_area.find('.key'); // находим все буквы, что таскались до этого
+            if (dragged_elems){ // если они есть в поле
                 $.each(dragged_elems, function(){
-                    $(this).removeAttr('disabled').removeClass('disabled');
-                    $('.keyboard').append($(this));
+                    $(this).removeAttr('disabled').removeClass('disabled'); // возобновление их активности
+                    $('.keyboard').append($(this)); // вставка обратно в клавиатуру
                 });
             }
-            target_area.html('<h2 class = "message">Drag your letter here:</h2>');
+            target_area.find('h2.message').fadeIn(); // возобновление сообщения 
 
         }));
     });
-
-    // при нажатии на клавиши, проверка на соответствие буквы в слове
-
-    // $.each(keys, function(){
-    //     $(this).on('click', function(){
-    //         button = $(this);
-    //         button.prop('disabled', 'true').addClass('disabled');
-    //         $.each(random_word.split(''), function(index, value){
-    //             let letter = button.html().toLowerCase();
-    //             if (value === letter) answer[index].html(letter).addClass('opened_letter');
-    //         });
-    //         word_span.html(answer);
-    //     });
-    // });
 
     // делаем таргет целевым элементом
 
@@ -84,16 +70,19 @@ $(document).ready(function(){
         e.originalEvent.preventDefault();
     });
 
+    // когда клавиша попадант на поле
+
     target_area.on('drop', function(e){
         e.originalEvent.preventDefault();
-        $(this).find('h2.message').fadeOut();
+        $(this).find('h2.message').fadeOut(); // исчезновение сообщения
 
-        var data = e.originalEvent.dataTransfer.getData('text');
+        var data = e.originalEvent.dataTransfer.getData('text'); 
         console.log(data);
-        var button = $('#' + data);
-        console.log(button);
-        button.prop('disabled', 'true').addClass('disabled');
-        $(this).append(button);
+        var button = $('#' + data); // находим перетаскиваемую кнопку
+        button.prop('disabled', 'true').addClass('disabled'); // делаем перетаскиваемую кнопку деактивированой
+        $(this).append(button); //вставляем в поле
+
+        // если такая буква есть в слове, показываем
 
         $.each(random_word.split(''), function(index, value){
             let letter = data.toLowerCase();
