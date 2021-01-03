@@ -19,8 +19,6 @@ class Spin {
 
 let spin = new Spin(['100', '250', '*']);
 
-alert(spin.getField());
-
 class Player {
     #name;
 
@@ -36,7 +34,6 @@ class Player {
 }
 
 const player = new Player('Ватсон');
-alert(player.getName());
 
 class BotPlayer extends Player{
     chooseLetter(availableLetter){
@@ -164,4 +161,6 @@ class Host{
 
 const game = new Game('City');
 
-game.run();
+//game.run();
+
+go.addEventListener('click', game.run.bind(game));
